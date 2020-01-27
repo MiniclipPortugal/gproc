@@ -22,7 +22,10 @@
 %% <p>For a detailed description, see gproc/doc/erlang07-wiger.pdf.</p>
 %% @end
 -module(gproc_dist).
+-define(GPROC_DISTED, os:getenv("GPROC_DIST") =:= "true").
+-if(GPROC_DISTED).
 -behaviour(gen_leader).
+-endif.
 
 -export([start_link/0, start_link/1,
          reg/1, reg/4, unreg/1,
