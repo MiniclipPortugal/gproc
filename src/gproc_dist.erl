@@ -22,8 +22,7 @@
 %% <p>For a detailed description, see gproc/doc/erlang07-wiger.pdf.</p>
 %% @end
 -module(gproc_dist).
--define(GPROC_DISTED, os:getenv("GPROC_DIST") =:= "true").
--if(GPROC_DISTED).
+-ifdef(GPROC_DIST).
 -behaviour(gen_leader).
 -endif.
 
